@@ -4,8 +4,9 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Storage;
-use Pest\Browser\Browsable;
+use Spatie\MediaLibrary\Conversions\Jobs\PerformConversionsJob;
 
 uses()->group('post', 'feature');
 
@@ -17,6 +18,7 @@ beforeEach(function () {
 });
 
 test('user can create post', function () {
+    Queue::fake();
     $image = UploadedFile::fake()->image('post.jpg', 800, 600);
 
     $response = $this->actingAs($this->user)
@@ -34,6 +36,8 @@ test('user can create post', function () {
         'user_id' => $this->user->id,
         'category_id' => $this->category->id,
     ]);
+
+    Queue::assertPushed(PerformConversionsJob::class);
 });
 
 test('user can view published post', function () {
@@ -65,6 +69,7 @@ test('user cannot edit other users post', function () {
 });
 
 test('user can update their post', function () {
+    Queue::fake();
     $post = Post::factory()->create([
         'user_id' => $this->user->id,
         'category_id' => $this->category->id,
@@ -85,6 +90,8 @@ test('user can update their post', function () {
         'id' => $post->id,
         'title' => 'Updated Post Title',
     ]);
+
+    Queue::assertPushed(PerformConversionsJob::class);
 });
 
 test('user can delete their post', function () {
