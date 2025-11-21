@@ -40,6 +40,7 @@ test('user can clap and unclap post', function () {
 });
 
 test('guest cannot clap post', function () {
+    User::factory()->create();
     $category = Category::first();
     $post = Post::factory()->create([
         'category_id' => $category->id,
