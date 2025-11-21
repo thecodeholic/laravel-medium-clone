@@ -150,7 +150,7 @@ jobs:
     name: Deploy to Hostinger
     runs-on: ubuntu-latest
     needs: [tests, build-assets]
-    if: success() || failure() # Deploy even if tests fail (you can change to 'success()' to require passing tests)
+    if: success()
 
     steps:
       - name: Checkout code
