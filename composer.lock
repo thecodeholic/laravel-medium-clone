@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca433c33dbae4286b861c54cd4f45b05",
+    "content-hash": "9cf8fee4fbb50a5d9e102440bb8b4873",
     "packages": [
         {
             "name": "brick/math",
@@ -11414,16 +11414,16 @@
         },
         {
             "name": "thecodeholic/laravel-hostinger-deploy",
-            "version": "0.4.0",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodeholic/laravel-hostinger-deploy.git",
-                "reference": "99e2f56e0fa5ae6b5e83fb43587e08ba03fe9326"
+                "reference": "faea34e8841e1ec0f3de8fe941f50fd7b4e70f9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodeholic/laravel-hostinger-deploy/zipball/99e2f56e0fa5ae6b5e83fb43587e08ba03fe9326",
-                "reference": "99e2f56e0fa5ae6b5e83fb43587e08ba03fe9326",
+                "url": "https://api.github.com/repos/thecodeholic/laravel-hostinger-deploy/zipball/faea34e8841e1ec0f3de8fe941f50fd7b4e70f9f",
+                "reference": "faea34e8841e1ec0f3de8fe941f50fd7b4e70f9f",
                 "shasum": ""
             },
             "require": {
@@ -11470,9 +11470,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thecodeholic/laravel-hostinger-deploy/issues",
-                "source": "https://github.com/thecodeholic/laravel-hostinger-deploy/tree/v0.4.0"
+                "source": "https://github.com/thecodeholic/laravel-hostinger-deploy/tree/v0.5.0"
             },
-            "time": "2025-11-11T22:14:30+00:00"
+            "time": "2025-12-09T01:52:07+00:00"
         },
         {
             "name": "theseer/tokenizer",
